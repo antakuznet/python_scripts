@@ -1,3 +1,3 @@
-Pytho script to change email address domains in the users.csv file. It recieves two arguments as old domain name and desired domain name.
+Python script to change email address domains in the users.csv file. It recieves two arguments as old domain name and desired domain name.
 After replacing old domain name all items stored in new updated_users.csv file. CSV files must be in the same directory with script.py.
 
