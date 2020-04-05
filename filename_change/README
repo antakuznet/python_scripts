@@ -1,0 +1,4 @@
+Python script to change desired file name from list.txt on new one.
+list.txt is list of users and files with theirs paths in format: {number} {username} {path/filename}
+lookup.sh is bash script to create oldfiles.txt with files which exist in the system and have to be changed.
+name_change.py is a python script to replace old files names on new ones.

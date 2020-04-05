@@ -1,0 +1,5 @@
+001 user1 /url/user1document1.doc
+002 user2 /url/user2document1.doc
+003 user1 /url/user1document2.doc
+001 user1 /url/user1document3.doc
+001 user3 /url/user3document1.doc
