@@ -1,0 +1,9 @@
+Python scripts to parse syslog.log file and make a web page with errors report.
+
+syslog.log is an example of file with system logs.
+
+check.py python script which creates two files:
+    first .csv file with errors counts sorted by most popular
+    second .csv file with user error counts sorted by Username
+
+csv_to_html.py python script which converts generated .csv reports to html file.
