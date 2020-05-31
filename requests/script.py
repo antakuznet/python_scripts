@@ -3,21 +3,27 @@
 import os
 import requests
 import json
+import csv
 
-path = '/'
-url = 'http://'
+path = os.path.expanduser('~') + ''
+url = 'https://'
 
-files = os.listdir(path)
-
-for file in files:
-    if file.endswith('.txt'):
+for file in os.listdir(path):
+    if '.csv' in file and '.' not in file[0]:
         print(file)
-        review_dict = {}
-        with open(file, 'r') as review:
-            review_dict["title"] = review.readline().strip()
-            review_dict["name"] = review.readline().strip()
-            review_dict["date"] = review.readline().strip()
-            review_dict["feedback"] = review.readline().strip()
-        json_app = json.dumps(review_dict)
-        response = requests.post(url, data = json_app)
-        print(response)
+        user_dict = {}
+        users = csv.DictReader(open(path + file))
+        for user in map(dict, users):
+            user_dict = {}
+            user_dict['unit'] = int(user['unit'])
+            user_dict['name'] = user['name']
+            user_dict['nameFull'] = user['nameFull']
+            user_dict['address'] = user['address']
+            user_dict['phone'] = user['phone']
+            if user['email'] == '':
+                user_dict['email'] = None
+            else:
+                user_dict['email'] = user['email']
+
+            response = requests.post(url, json = user_dict)
+            print(response)
